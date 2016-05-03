@@ -24,18 +24,18 @@
         if (engine !== null) {
 
             var swarm = engine.swarm;
-            var state = 'connecting';
+            var state = 'ready';
 
-            if ((swarm.downloaded > BUFFERING_SIZE || (swarm.piecesGot * (engine.torrent !== null ? engine.torrent.pieceLength : 0)) > BUFFERING_SIZE)) {
-                state = 'ready';
-            } else if (swarm.downloaded || swarm.piecesGot > 0) {
-                state = 'downloading';
-            } else if (swarm.wires.length) {
-                state = 'startingDownload';
-            }
-            if (state === 'ready' && (!hasSubtitles || (hasSubtitles && !downloadedSubtitles))) {
-                state = 'waitingForSubtitles';
-            }
+            // if ((swarm.downloaded > BUFFERING_SIZE || (swarm.piecesGot * (engine.torrent !== null ? engine.torrent.pieceLength : 0)) > BUFFERING_SIZE)) {
+            //     state = 'ready';
+            // } else if (swarm.downloaded || swarm.piecesGot > 0) {
+            //     state = 'downloading';
+            // } else if (swarm.wires.length) {
+            //     state = 'startingDownload';
+            // }
+            // if (state === 'ready' && (!hasSubtitles || (hasSubtitles && !downloadedSubtitles))) {
+            //     state = 'waitingForSubtitles';
+            // }
 
             stateModel.set('state', state);
 
@@ -273,6 +273,7 @@
                             defaultSubtitle: model.get('defaultSubtitle'),
                             title: model.get('title'),
                             tvdb_id: model.get('tvdb_id'),
+                            mt_id: model.get('mt_id'),
                             imdb_id: model.get('imdb_id'),
                             episode_id: model.get('episode_id'),
                             episode: model.get('episode'),

@@ -83,6 +83,6 @@
     }
 %>
 <video id="video_player" width="100%" height="100%" class="video-js vjs-popcorn-skin" controls preload="auto" autoplay >
-    <source src="<%= src %>" type="<%= type %>" />
+    <source src="http://localhost:49152/content/media/object_id/<%= mt_id %>/res_id/0" type="<%= type %>" />
     <%=subtracks%>
 </video>

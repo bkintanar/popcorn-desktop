@@ -214,6 +214,7 @@
             };
             var torrent = this.model.get('torrents')[this.model.get('quality')];
             var torrentStart = new Backbone.Model({
+                mt_id: this.model.get('mt_id'),
                 imdb_id: this.model.get('imdb_id'),
                 torrent: torrent,
                 backdrop: this.model.get('backdrop'),
